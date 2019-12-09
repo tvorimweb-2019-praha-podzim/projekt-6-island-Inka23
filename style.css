@@ -1,5 +1,8 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-*, :after, :before { box-sizing: border-box; }
+
+*, :after, :before {
+  box-sizing: border-box;
+}
 
 /*
  BARVY
@@ -7,37 +10,379 @@
  Jedeme retro cernobile, dnes barvy nepotrebujeme.
 */
 
-
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    font-family: 'Merriweather', serif;
-    font-size: 16px;
-    line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
+.obal {
+  background-color: white;
+  width: 100%;
+}
+
+.obsah {
+  background-color: white;
+}
 
 /* HLAVICKA */
 
-.titulek {
-    font-family: 'Raleway', serif;
+.hlavicka {
+  background-image: url(images/island-hlavicka.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 230px;
+  color: #FFF;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+.titulek {
+  font-family: 'Raleway', serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+}
+
+.perex {
+  font-size: 60%;
+  padding: 10px 25px 15px;
+}
+
+.autor {
+  font-size: 60%;
+  font-style: italic;
+  padding: 15px 20px 30px;
+  position: relative;
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.autor::before {
+  content: " ";
+  position: absolute;
+  width: 60px;
+  border-top: 2px solid white;
+  left: 50%;
+  top: 0px;
+  transform: translate(-50%, 5px);
+}
 
 /* MENU */
 
+.menu {
+  margin: 0 25px;
+  padding: 0;
+  padding-bottom: 30px;
+  list-style: none;
+  text-align: center;
+}
 
+.polozka {
+  width: 100%;
+  border-bottom: 1px solid rgb(235, 226, 226);
+}
 
+.menu a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Monsterrat", sans-serif;
+  color: rgb(120, 118, 153);
+  font-size: 10px;
+  padding: 3px;
+}
+
+.menu a:hover, .menu a:focus, .menu a:active {
+  color: black;
+  font-weight: bold;
+}
 
 /* OBSAH */
 
+.uvod {
+  width: 100%;
+}
 
+p {
+  padding: 5px 15px;
+  margin: 0;
+  font-size: 67%;
+}
 
+.fotopopisek img {
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+}
+
+.fotopopisek {
+  margin: 30px 0 20px 0;
+}
+
+.popisek {
+  text-align: center;
+  margin: 0;
+  padding: 3px;
+  color: rgb(120, 118, 153);
+  font-size: 50%;
+}
+
+.popisek a {
+  color: rgb(120, 118, 153);
+}
+
+h2 {
+  font-family: 'Raleway', serif;
+  margin: 30px 15px;
+  padding: 0;
+  position: relative;
+  font-size: 18px;
+}
+
+h2::after {
+  content: " ";
+  position: absolute;
+  width: 100px;
+  border-bottom: 3px solid rgb(95, 90, 231);
+  left: -50px;
+  bottom: -20px;
+}
 
 /* FOTOGALERIE */
 
+.galerie {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
+.foto {
+  width: 100%;
+  min-height: 70px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
 
+.foto img {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.foto .popisek {
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+.foto .popisek-copy {
+  font-weight: normal;
+  font-size: 80%
+}
 
 /* PATICKA */
+
+.paticka {
+  width: 100%;
+}
+
+.paticka p {
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  margin-top: 10px;
+  padding: 20px 10px 15px;
+  ;
+  color: rgb(120, 118, 153);
+  font-size: 55%;
+  background-image: radial-gradient(white, lightgrey);
+}
+
+.paticka a {
+  color: rgb(120, 118, 153);
+  font-size: 90%;
+}
+
+.copy {
+  display: none;
+}
+
+/*TABLET*/
+
+@media (min-width: 500px) {
+  .hlavicka {
+    margin: 0;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  .perex {
+    font-size: 70%;
+    font-weight: bold;
+  }
+  .autor {
+    font-size: 65%;
+    font-weight: bold;
+  }
+  .menu {
+    display: flex;
+    padding: 30px 0;
+    align-items: center;
+  }
+  .menu li {
+    height: 25px;
+    border-top: 1px solid rgb(235, 226, 226);
+  }
+  .polozka1, .polozka2, .polozka3 {
+    border-right: 1px solid rgb(235, 226, 226);
+  }
+  p {
+    font-size: 75%;
+  }
+  h2 {
+    font-size: 120%;
+  }
+ 
+  .foto {
+    width: 50%;
+    float: left;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .foto img {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+  }
+  .foto .popisek {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #FFF;
+    text-align: right;
+    padding-right: 20px;
+    position: absolute;
+    width: 100%;
+    transition: transform 500ms ease 0s;
+  }
+  .foto:hover .popisek {
+    transform: translate(0, -100%);
+  }
+  .foto .popisek-copy, .foto a {
+    color: #FFF;
+  }
+  .paticka {
+    clear: left;
+  }
+  .paticka p {
+    margin-top: 0;
+  }
+  .foto .popisek-copy {
+    font-weight: normal;
+    font-size: 80%
+  }
+}
+
+/*POČÍTAČ*/
+
+@media (min-width: 1000px) {
+  .hlavicka {
+    min-height: 400px;
+  }
+
+  .obal {
+    position: relative;
+    width: 100%;
+    height: 5000px;
+    background-color: #f5f5f5;
+  }
+  .obsah {
+    margin-left: 10%;
+    margin-right: 10%;
+    position: absolute;
+    text-align: center;
+    top: 350px;
+  }
+  .titulek {
+    font-size: 80px;
+    padding-top: 20px;
+  }
+  .perex {
+    font-size: 90%;
+    font-weight: bold;
+    padding: 15px 250px 20px;
+  }
+  .autor {
+    font-size: 80%;
+    font-weight: bold;
+    text-align: center;
+  }
+  .menu {
+    display: inline-block;
+    float: left;
+    width: 20%;
+    margin: 10px 40px;
+  }
+  .menu li {
+    border: none;
+    border-bottom: 1px solid rgb(235, 226, 226);
+  }
+  .menu a {
+    display: block;
+    text-align: left;
+    font-size: 11px;
+  }
+  p {
+    font-size: 90%;
+    line-height: 1.8;
+    text-align: left;
+  }
+  .uvod {
+    margin-top: 20px;
+  }
+  .uvod p {
+    padding: 20px 30px 0 30%;
+  }
+  .fotopopisek {
+    margin: 40px 0 20px 0;
+  }
+  .fotopopisek .popisek {
+    display: none;
+  }
+  h2 {
+    font-size: 200%;
+    text-align: left;
+    padding: 30px;
+    margin: 10px 20px;
+  }
+  h2::after {
+    left: -20px;
+    bottom: 10px;
+  }
+  .proc p {
+    margin: 0 25% 10px 35px;
+  }
+  .vidět p {
+    text-align: left;
+    margin: 0 40px 10px 25%;
+  }
+  
+  .foto {
+    width: 33.33333%;
+    float: left;
+  }
+  .foto img {
+   width: 100%;
+  }
+  .foto .popisek {
+    text-align: center;
+  }
+}
